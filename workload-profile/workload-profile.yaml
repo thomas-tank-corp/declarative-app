@@ -1,0 +1,28 @@
+containers: {}
+
+service:
+  ports: {}
+
+ingress:
+  enabled: false
+  hosts: []
+
+registry:
+  secret:
+    credentials: ""
+
+tls: {}
+
+default_container_resources:
+  limits:
+    cpu: 250m
+    memory: 256Mi
+  requests:
+    cpu: 25m
+    memory: 64Mi
+
+variables: {}
+
+secrets: {}
+
+imagePullSecrets: {}

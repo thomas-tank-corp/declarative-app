@@ -1,0 +1,30 @@
+{
+    "id": "s3-terraform",
+    "name": "s3-terraform",
+    "type": "s3",
+    "driver_type": "terraform",
+    "driver_inputs": {
+      "values": {
+        "source": {
+          "path": "s3",
+          "rev": "refs/heads/main",
+          "url": "url"
+       "variables": {
+            "bucket": "humanitec-terraform-demo-${context.app.id}-${context.env.id}",
+            "region": "eu-west-2"
+            }
+        }
+      },
+      "secrets": {
+        "variables": {
+          "credentials": {
+              "access_key": "ak",
+              "secret_key": "sk"
+          }
+        }
+      }
+    },
+    "criteria": [
+      {"env_type":""}
+    ]
+}
