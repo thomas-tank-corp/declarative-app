@@ -12,7 +12,7 @@ resources:
     type: postgres
     properties:
       host:
-        default: localhost
+        default: ${resources.db.host}
       port:
         default: 5432
       name:
