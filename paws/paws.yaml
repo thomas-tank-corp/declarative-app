@@ -1,15 +1,22 @@
-apiVersion: spec.paws.sh/v1alpha1
-kind: Workload
-metadata:
-  name: products-catalog
-spec:
-  resources:
-    db:
-      type: postgres
-    file-storage:
-       type:S3
-    api-dns:
-      type: dns
-  container:
-    variables:
-      CONNECTION_STRING: postgresql://${resources.db.user}:${resources.db.password}@${resources.db.host}:${resources.db.port}/${resources.db.name}
+name: app-workload
+
+container:
+  image: <IMAGE_NAME>
+  command:
+  - /bin/sh
+  variables:
+    PORT: 8080
+    CONNECTION_STRING: postgresql://${resources.db.username}:${resources.db.password}@${resources.db.host}:${resources.db.port}/${resources.db.name}
+resources:
+  db:
+    type: postgres
+    properties:
+      host:
+        default: localhost
+      port:
+        default: 5432
+      name:
+      username:
+        secret: true
+      password:
+        secret: true
