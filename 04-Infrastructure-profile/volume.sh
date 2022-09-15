@@ -1,3 +1,5 @@
+#!/bin/bash
+
 curl -v \
 --request POST "https://api.humanitec.io/orgs/${HUMANITEC_ORG}/definitions" \
 --header "Authorization: Bearer ${HUMANITEC_TOKEN}" \

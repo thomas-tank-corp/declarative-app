@@ -8,7 +8,7 @@
         "source": {
           "path": "s3",
           "rev": "refs/heads/main",
-          "url": "url"
+          "url": "url",
        "variables": {
             "bucket": "humanitec-terraform-demo-${context.app.id}-${context.env.id}",
             "region": "eu-west-2"

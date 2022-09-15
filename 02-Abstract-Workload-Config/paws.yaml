@@ -1,11 +1,11 @@
 name: app-workload
 
 container:
-  image: <IMAGE_NAME>
+  image: nginx
   command:
   - /bin/sh
   variables:
-    PORT: 8080
+    #PORT: 8080
     CONNECTION_STRING: postgresql://${resources.db.username}:${resources.db.password}@${resources.db.host}:${resources.db.port}/${resources.db.name}
 resources:
   db:
