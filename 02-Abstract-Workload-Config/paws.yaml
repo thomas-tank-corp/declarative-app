@@ -1,7 +1,7 @@
 name: app-workload
 
 container:
-  image: gcr.io/${GOOGLE_PROJECT}/nginx
+  image: 
   command:
   - /bin/sh
   variables:
