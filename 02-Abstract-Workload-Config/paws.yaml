@@ -4,19 +4,6 @@ container:
   image: 
   command:
   - /bin/sh
-  variables:
-    #PORT: 8080
-    CONNECTION_STRING: postgresql://${resources.db.username}:${resources.db.password}@${resources.db.host}:${resources.db.port}/${resources.db.name}
 resources:
-  db:
+  appdb:
     type: postgres
-    properties:
-      host:
-        default: ${resources.db.host}
-      port:
-        default: 5432
-      name:
-      username:
-        secret: true
-      password:
-        secret: true
