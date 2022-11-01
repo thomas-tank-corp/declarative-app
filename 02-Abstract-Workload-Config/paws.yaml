@@ -1,9 +1,0 @@
-name: app-workload
-
-container:
-  image: 
-  command:
-  - /bin/sh
-resources:
-  appdb:
-    type: postgres

@@ -1,0 +1,24 @@
+apiVersion: score.dev/v1b1
+
+metadata:
+  name: app-workload
+
+containers:
+  hello:
+    image: busybox
+variables:
+    CONNECTION_STRING: postgresql://${resources.db.username}:${resources.db.password}@${resources.db.host}:${resources.db.port}/${resources.db.name}
+
+resources:
+  app-db:
+    type: postgres
+    properties:
+      host:
+        default: localhost
+      port:
+        default: 5432
+      name:
+      username:
+        secret: true
+      password:
+        secret: true
