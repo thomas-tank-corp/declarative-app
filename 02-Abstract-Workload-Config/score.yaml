@@ -5,9 +5,9 @@ metadata:
 
 containers:
   hello:
-    image: busybox
-variables:
-    CONNECTION_STRING: postgresql://${resources.db.username}:${resources.db.password}@${resources.db.host}:${resources.db.port}/${resources.db.name}
+    image: 
+    variables:
+        CONNECTION_STRING: postgresql://${resources.app-db.username}:${resources.app-db.password}@${resources.app-db.host}:${resources.app-db.port}/${resources.app-db.name}
 
 resources:
   app-db:
